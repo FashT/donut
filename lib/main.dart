@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pr/page.dart';
-import 'package:pr/utils.dart';
+import 'package:pr/providers/utils.dart';
+import 'package:pr/screens/dashboard/dashboard.dart';
 import 'package:pr/widget.dart';
 import 'package:provider/provider.dart';
 
@@ -19,18 +19,21 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
+          create: (_) => DonutService(),
+        ),
+        ChangeNotifierProvider(
           create: (_) => DonutBottomBarSelectionService(),
           builder: (context, child) => MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
-        debugShowCheckedModeBanner: false,
-        initialRoute: '/',
-        navigatorKey: Utils.mainAppNav,
-        routes: {
-          '/':(context) => SplashPage(),
-          '/main': (context) => DonutShopMain()
-        },
-      ),
+            title: 'Flutter Demo',
+            //  theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
+            debugShowCheckedModeBanner: false,
+            initialRoute: '/',
+            navigatorKey: Utils.mainAppNav,
+            routes: {
+              '/': (_) => const SplashPage(),
+              '/main': (_) => const DonutShopMain(),
+            },
+          ),
         ),
       ],
       //child:

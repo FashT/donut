@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pr/page.dart';
-import './utils.dart';
+import 'package:pr/providers/utils.dart';
 
 class SplashPage extends StatelessWidget {
 
@@ -8,9 +7,9 @@ class SplashPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 2),(){
+    Future.delayed(const Duration(seconds: 2),(){
       Utils.mainAppNav.currentState!.pushReplacementNamed('/main');
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) => DonutShopMain()));
+    
     });
     return  Scaffold(
       backgroundColor: Utils.mainColor,
