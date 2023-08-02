@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:pr/screens/onboarding/page.dart';
 import 'package:pr/screens/sidebar/sidebar.dart';
@@ -16,7 +14,7 @@ class DonutShopMain extends StatefulWidget {
 
 class _DonutShopMainState extends State<DonutShopMain> {
   var currentPage = [
-   const  DonutMainPage(),
+    const DonutMainPage(),
     const Text("Profile"),
     const Text("Settings")
   ];
@@ -40,7 +38,7 @@ class _DonutShopMainState extends State<DonutShopMain> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18),
-        child: Center(child: currentPage[provider.currentIndex1]),
+        child: currentPage[provider.currentIndex1],
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Utils.mainColor,

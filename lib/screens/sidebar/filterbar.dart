@@ -23,7 +23,7 @@ class DonutFilterBar extends StatelessWidget {
     }
 
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Consumer<DonutService>(
         builder: (context, donutService, child) {
           return Column(

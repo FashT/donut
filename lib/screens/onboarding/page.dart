@@ -9,13 +9,22 @@ class DonutMainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-     
-      children: [
-        DonutPager(),
-        DonutFilterBar(),
-        Expanded(child: DonutList(donuts: donuts)), 
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const DonutPager(),
+          const DonutFilterBar(),
+          Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: SizedBox(
+              height: 300,
+              child: DonutList(
+                donuts: donuts,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
